@@ -190,7 +190,9 @@
                 <div class="row">
                     <div class="col">
                         <div class="card design__card">
-                            <img src="img/types/type-1.jpg" alt="Косметический ремонт" class="card__image">
+                            <div class="design-image">
+                                <img src="img/types/type-1.jpg" alt="Косметический ремонт" class="card__image design-image">
+                            </div>
                             <div class="card__text">
                                 <h3 class="card__title">Косметический ремонт</h3>
                                 <!-- /.card__title -->
@@ -217,7 +219,9 @@
                     <!-- /.col -->
                     <div class="col">
                         <div class="card design__card">
-                            <img src="img/types/type-2.jpg" alt="Капитальный ремонт" class="card__image">
+                            <div class="design-image">
+                                <img src="img/types/type-3.jpg" alt="Косметический ремонт" class="card__image design-image">
+                            </div>
                             <div class="card__text">
                                 <h3 class="card__title">Капитальный ремонт</h3>
                                 <!-- /.card__title -->
@@ -250,7 +254,9 @@
                     <!-- /.col -->
                     <div class="col">
                         <div class="card design__card">
-                            <img src="img/types/type-3.jpg" alt="Дизайнерский ремонт" class="card__image">
+                            <div class="design-image">
+                                <img src="img/types/type-2.jpg" alt="Косметический ремонт" class="card__image design-image">
+                            </div>
                             <div class="card__text">
                                 <h3 class="card__title">Дизайнерский ремонт</h3>
                                 <!-- /.card__title -->
@@ -297,6 +303,29 @@
             <!-- /.container -->
         </section>
         <!-- /.section types -->
+        <div class="modal">
+            <div class="modal__dialog">
+                <button class="modal__close"></button>
+                <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h3>
+                <form action="" class="modal__form">
+                    <label for="user-name" class="label modal__label">Имя</label>
+                    <input type="text" class="input form__input" id="user-name">
+                    <label for="user-phone" class="label modal__label">Телефон</label>
+                    <input type="tel" class="input form__input" id="user-phone">
+                    <label for="user-email" class="label modal__label">Email</label>
+                    <input type="email" class="input form__input" id="user-email">
+                    <div class="policy">
+                        <input type="checkbox" name="policy-chekbox" id="policy-chekbox">
+                        <label for="policy-chekbox">Я соглашаюсь с обработкой данных</label>
+                    </div>
+                    <!-- /.policy -->
+                    <button class="button button--primary modal__button"></button>
+                </form>
+                <!-- /.modal__form -->
+            </div>
+            <!-- /.modal__dialog -->
+        </div>
+        <!-- /.modal -->
     </main>
 </body>
 </html>
