@@ -605,6 +605,8 @@ img {
   text-transform: none; }
 
 .modal {
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   z-index: 199;
   top: 0;
@@ -617,10 +619,13 @@ img {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .modal--visible {
+    opacity: 1;
+    visibility: visible; }
   .modal__dialog {
     position: relative;
     max-width: 36.36rem;
-    background: #131313 url(../img/bg-lines.svg);
+    background: #131313 url("../img/bg-lines.svg");
     padding: 2.357rem 3.5rem 1.928rem;
     color: #ffffff; }
   .modal__close {
@@ -632,7 +637,8 @@ img {
     background: transparent url("../img/close.svg") no-repeat center;
     border: none;
     margin: 12px;
-    cursor: pointer; }
+    cursor: pointer;
+    outline: none; }
   .modal__title {
     font-family: 'Yeseva One', cursive;
     font-size: 1.357rem;
