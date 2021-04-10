@@ -308,18 +308,18 @@
                 <button class="modal__close"></button>
                 <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h3>
                 <form action="" class="modal__form">
-                    <label for="user-name" class="label modal__label">Имя</label>
-                    <input type="text" class="input form__input" id="user-name">
-                    <label for="user-phone" class="label modal__label">Телефон</label>
-                    <input type="tel" class="input form__input" id="user-phone">
-                    <label for="user-email" class="label modal__label">Email</label>
-                    <input type="email" class="input form__input" id="user-email">
-                    <div class="policy">
-                        <input type="checkbox" name="policy-chekbox" id="policy-chekbox">
-                        <label for="policy-chekbox">Я соглашаюсь с обработкой данных</label>
+                    <label for="user-name" class="label modal__label label--light">Имя</label>
+                    <input type="text" class="input form__input modal__input" id="user-name" placeholder="Как вас зовут:">
+                    <label for="user-phone" class="label modal__label label--light">Телефон</label>
+                    <input type="tel" class="input form__input modal__input" id="user-phone" placeholder="Ваш номер телефона">
+                    <label for="user-email" class="label modal__label label--light">Email</label>
+                    <input type="email" class="input form__input modal__input" id="user-email" placeholder="Ваш email:">
+                    <div class="policy modal__policy">
+                        <input type="checkbox" name="policy-chekbox" id="policy-chekbox" class="policy__checkbox" checked>
+                        <label for="policy-chekbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
                     </div>
                     <!-- /.policy -->
-                    <button class="button button--primary modal__button"></button>
+                    <button class="button button--primary modal__button">Отправить заявку</button>
                 </form>
                 <!-- /.modal__form -->
             </div>
