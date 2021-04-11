@@ -521,7 +521,7 @@ img {
     max-width: 80px;
     height: 100%; }
   .hero__scroll-down {
-    z-index: 3;
+    z-index: 5;
     position: absolute;
     display: flex;
     justify-content: center;
