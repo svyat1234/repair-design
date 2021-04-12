@@ -28,13 +28,21 @@
 $(document).ready(function () {
     var modal = $('.modal'), 
         modalBtn = $('[data-toggle=modal]'),
-        closeBtn = $('.modal__close');
-
-    modalBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
+        closeBtn = $('.modal__close'),
+        switchModal = () => {
+            modal.toggleClass('modal--visible');
+        } ;
+    modalBtn.on('click', switchModal );
+    closeBtn.on('click', switchModal);
+    $(document).keyup(function (e) {
+        if (e.key === "Escape") {
+            modal.toggleClass('modal--visible');
+        }
     });
-    closeBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
+    $(document).onclick (function (event) {
+        if (event.target == modal) {
+            modal.toggleClass('modal--visible');
+        }
     });
     var next = $('.swiper-button-next');
     var prev = $('.swiper-button-prev');
@@ -42,6 +50,7 @@ $(document).ready(function () {
     next.css('left', prev.width() + 10 + bullets.width() +10);
     bullets.css('left', prev.width() + 10);
 });
+
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     const swiper = new Swiper('.swiper-container', {
