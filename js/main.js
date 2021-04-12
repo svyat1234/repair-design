@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         })
       })
       // при прокрутке окна (window)
+      $('.scrollup').fadeOut();
       $(window).scroll(function() {
         // если пользователь прокрутил страницу более чем на 200px
         if ($(this).scrollTop()>200) {
@@ -102,4 +103,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
           $('.scrollup').fadeOut();
         }
       });
+      // прокрутка вниз
+      $(function() {
+        // при нажатии на кнопку scrollup
+        $('.hero__scroll-down').click(function() {
+          // переместиться в верхнюю часть страницы
+          $("html, body").animate({
+            scrollTop:10000
+          },1);
+        })
+      })
 });
