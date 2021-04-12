@@ -26,6 +26,7 @@
 
 
 $(document).ready(function () {
+    // Настройка модального окна
     var modal = $('.modal'), 
         modalBtn = $('[data-toggle=modal]'),
         closeBtn = $('.modal__close'),
@@ -34,16 +35,21 @@ $(document).ready(function () {
         } ;
     modalBtn.on('click', switchModal );
     closeBtn.on('click', switchModal);
+    
+    // пропадает (и почему то появляется) при нажатии на Esc
     $(document).keyup(function (e) {
         if (e.key === "Escape") {
+            modal.removeClass('modal--visible');
+        }
+    });
+    // Скрывает модально окно при нажатии вне него
+    $(document).click(function (event) {
+        if ($(event.target).is('.modal')) {
             modal.toggleClass('modal--visible');
         }
     });
-    $(document).onclick (function (event) {
-        if (event.target == modal) {
-            modal.toggleClass('modal--visible');
-        }
-    });
+
+    // Настройка навигации слайдера
     var next = $('.swiper-button-next');
     var prev = $('.swiper-button-prev');
     var bullets = $('.swiper-pagination');
@@ -73,5 +79,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
         scrollbar: {
           el: '.swiper-scrollbar',
         },
+      });
+      // Прокрутка наверх
+      $(function() {
+        // при нажатии на кнопку scrollup
+        $('.scrollup').click(function() {
+          // переместиться в верхнюю часть страницы
+          $("html, body").animate({
+            scrollTop:0
+          },1000);
+        })
+      })
+      // при прокрутке окна (window)
+      $(window).scroll(function() {
+        // если пользователь прокрутил страницу более чем на 200px
+        if ($(this).scrollTop()>200) {
+          // то сделать кнопку scrollup видимой
+          $('.scrollup').fadeIn();
+        }
+        // иначе скрыть кнопку scrollup
+        else {
+          $('.scrollup').fadeOut();
+        }
       });
 });

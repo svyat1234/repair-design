@@ -49,4 +49,28 @@
 			border-radius: 1px
 			cursor: pointer
 			margin-right: 0.64rem
-	
+.scrollup
+    z-index: 5
+    position: fixed
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    left: 0
+    bottom: 0
+    min-width: 17.6rem
+    min-height: 6.92rem 
+    background-color: $dark
+    text-transform: uppercase
+    color: $light
+    text-decoration: none
+    &::after
+	    content: ''
+	    background: url(../img/arrow-down.svg) no-repeat center
+	    width: 30px
+	    height: 30px
+	    border: 2px solid $primary
+	    border-radius: 50%
+	    transform: rotate(180deg)
+	    margin-left: 12px
+		
