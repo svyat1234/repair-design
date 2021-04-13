@@ -55,62 +55,65 @@ $(document).ready(function () {
     var bullets = $('.swiper-pagination');
     next.css('left', prev.width() + 10 + bullets.width() +10);
     bullets.css('left', prev.width() + 10);
-});
 
 
-document.addEventListener("DOMContentLoaded", function(event) { 
+    // Слайдер
+
     const swiper = new Swiper('.swiper-container', {
-        // Optional parameters
-        loop: true,
-      
-        // If we need pagination
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-        },
-      
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      
-        // And if we need scrollbar
-        scrollbar: {
-          el: '.swiper-scrollbar',
-        },
-      });
-      // Прокрутка наверх
-      $(function() {
-        // при нажатии на кнопку scrollup
-        $('.scrollup').click(function() {
-          // переместиться в верхнюю часть страницы
-          $("html, body").animate({
-            scrollTop:0
-          },1000);
-        })
+      // Optional parameters
+      loop: true,
+    
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+    // Прокрутка наверх
+    $(function() {
+      // при нажатии на кнопку scrollup
+      $('.scrollup').click(function() {
+        // переместиться в верхнюю часть страницы
+        $("html, body").animate({
+          scrollTop:0
+        },1000);
       })
-      // при прокрутке окна (window)
-      $('.scrollup').fadeOut();
-      $(window).scroll(function() {
-        // если пользователь прокрутил страницу более чем на 200px
-        if ($(this).scrollTop()>200) {
-          // то сделать кнопку scrollup видимой
-          $('.scrollup').fadeIn();
-        }
-        // иначе скрыть кнопку scrollup
-        else {
-          $('.scrollup').fadeOut();
-        }
-      });
-      // прокрутка вниз
-      $(function() {
-        // при нажатии на кнопку scrollup
-        $('.hero__scroll-down').click(function() {
-          // переместиться в верхнюю часть страницы
-          $("html, body").animate({
-            scrollTop:10000
-          },1);
-        })
+    })
+    // при прокрутке окна (window)
+    $('.scrollup').fadeOut();
+    $(window).scroll(function() {
+      // если пользователь прокрутил страницу более чем на 200px
+      if ($(this).scrollTop()>200) {
+        // то сделать кнопку scrollup видимой
+        $('.scrollup').fadeIn();
+      }
+      // иначе скрыть кнопку scrollup
+      else {
+        $('.scrollup').fadeOut();
+      }
+    });
+    // прокрутка вниз
+    $(function() {
+      // при нажатии на кнопку scrollup
+      $('.hero__scroll-down').click(function() {
+        // переместиться в верхнюю часть страницы
+        $("html, body").animate({
+          scrollTop:10000
+        },1);
       })
+    })
+
+    // Анимация
+    new WOW().init();
 });
