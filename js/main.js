@@ -88,7 +88,7 @@ $(document).ready(function () {
         // переместиться в верхнюю часть страницы
         $("html, body").animate({
           scrollTop:0
-        },1000);
+        },700);
       })
     })
     // при прокрутке окна (window)
@@ -105,29 +105,136 @@ $(document).ready(function () {
       }
     });
     // прокрутка вниз
-    $(function() {
-      // при нажатии на кнопку scrollup
-      $('.hero__scroll-down').click(function() {
-        // переместиться в верхнюю часть страницы
-        $("html, body").animate({
-          scrollTop:10000
-        },1);
+    function scrollTo(element) {
+      window.scroll({
+        left: 0,
+        top: element.offsetTop,
+        behavior: 'smooth'
+        })
+      }
+      var button = document.querySelector('.hero__scroll-down');
+      var footer = document.querySelector('#footer');
+      
+      button.addEventListener('click', () => {
+        scrollTo(footer);
       })
-    })
 
     // Анимация
     new WOW().init();
 
     // Валидация формы
     $('.modal__form').validate({
+      errorClass: "invalid",
       rules: {
         // simple rule, converted to {required:true}
-        userName: "required",
+        userName: {
+          required: true,
+          minlength: 2
+        },
+        userPhone: "required",
         // compound rule
         userEmail: {
           required: true,
           email: true
         }
+      }, // сообщения
+      messages: {
+        userName: {
+          required: "Имя обязательно",
+          minlength: "Имя должно быть не короче двух букв"
+        },
+        userPhone: "Телефон обязателен",
+        userEmail: {
+          required: "Email обязателен",
+          email: "Введите в формате: name@domain.com"
+        }
       }
     });
+    $('.control__form').validate({
+      errorClass: "invalid",
+      rules: {
+        // simple rule, converted to {required:true}
+        userName: {
+          required: true,
+          minlength: 2
+        },
+        userPhone: "required"
+        // compound rule
+      }, // сообщения
+      messages: {
+        userName: {
+          required: "Имя обязательно",
+          minlength: "Имя должно быть не короче двух букв"
+        },
+        userPhone: "Телефон обязателен",
+      }
+    });
+    $('.footer__form').validate({
+      errorClass: "invalid",
+      rules: {
+        // simple rule, converted to {required:true}
+        userName: {
+          required: true,
+          minlength: 2
+        },
+        userQuastion: "required",
+        userPhone: "required",
+        // compound rule
+        userEmail: {
+          required: true,
+          email: true
+        }
+      }, // сообщения
+      messages: {
+        userName: {
+          required: "Имя обязательно",
+          minlength: "Имя должно быть не короче двух букв"
+        },
+        userQuastion: "Задайте вопрос",
+        userPhone: "Телефон обязателен",
+        userEmail: {
+          required: "Email обязателен",
+          email: "Введите в формате: name@domain.com"
+        }
+      }
+    });
+
+    // Маска для номера телефона
+    $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
+
+
+    // создание yandex карты
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map('map', {
+              center: [47.244621, 39.723167],
+              zoom: 18
+          }, {
+              searchControlProvider: 'yandex#search'
+          }),
+  
+          // Создаём макет содержимого.
+          MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+              '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+          ),
+  
+          myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+              hintContent: 'Наш магазин',
+              balloonContent: 'Улыбнись :)'
+          }, {
+              // Опции.
+              // Необходимо указать данный тип макета.
+              iconLayout: 'default#image',
+              // Своё изображение иконки метки.
+              iconImageHref: 'img/location.png',
+              // Размеры метки.
+              iconImageSize: [32, 32],
+              // Смещение левого верхнего угла иконки относительно
+              // её "ножки" (точки привязки).
+              iconImageOffset: [-5, -38]
+          });
+  
+  
+      myMap.geoObjects
+          .add(myPlacemark);
+  });
 });
