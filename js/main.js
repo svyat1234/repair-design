@@ -49,15 +49,7 @@ $(document).ready(function () {
         }
     });
 
-    // Настройка навигации слайдера
-    var next = $('.swiper-button-next');
-    var prev = $('.swiper-button-prev');
-    var bullets = $('.swiper-pagination');
-    next.css('left', prev.width() + 10 + bullets.width() +10);
-    bullets.css('left', prev.width() + 10);
-
-
-    // Слайдер
+        // Слайдер
 
     const swiper = new Swiper('.swiper-container', {
       // Optional parameters
@@ -80,6 +72,15 @@ $(document).ready(function () {
         el: '.swiper-scrollbar',
       },
     });
+
+    // Настройка навигации слайдера
+    var next = $('.swiper-button-next');
+    var prev = $('.swiper-button-prev');
+    var bullets = $('.swiper-pagination');
+    next.css('left', prev.width() + 10 + bullets.width() +10);
+    bullets.css('left', prev.width() + 10);
+
+
     // Прокрутка наверх
     $(function() {
       // при нажатии на кнопку scrollup
@@ -116,4 +117,17 @@ $(document).ready(function () {
 
     // Анимация
     new WOW().init();
+
+    // Валидация формы
+    $('.modal__form').validate({
+      rules: {
+        // simple rule, converted to {required:true}
+        userName: "required",
+        // compound rule
+        userEmail: {
+          required: true,
+          email: true
+        }
+      }
+    });
 });
