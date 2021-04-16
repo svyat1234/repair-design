@@ -444,7 +444,7 @@ img {
 .section {
   padding: 60px 0; }
   .section--dark {
-    background-color: #131313;
+    background: #131313 url("../img/bg-lines.svg") no-repeat center/cover;
     color: #ffffff; }
   .section-title {
     text-align: center; }
@@ -847,7 +847,7 @@ img {
   text-transform: none; }
 
 .work {
-  padding-bottom: 36rem;
+  padding-bottom: 38rem;
   padding-top: 22.14rem;
   margin-top: -22.14rem; }
   .work--title {
@@ -855,6 +855,64 @@ img {
     text-transform: uppercase; }
   .work__slide--left {
     margin-top: -105px; }
+
+.team {
+  padding-bottom: 30rem; }
+  .team__section-title {
+    margin-top: -35.715rem; }
+  .team-info {
+    max-width: 450px;
+    margin: auto;
+    margin-top: 1.642rem;
+    margin-bottom: 5.285rem; }
+  .team-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 75.92rem;
+    margin: auto; }
+  .team__card {
+    position: relative;
+    z-index: 5; }
+    .team__card__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    .team__card__image {
+      position: relative;
+      display: flex; }
+    .team__card__logo {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: -35px;
+      margin-left: -10px;
+      width: 5rem;
+      height: 5rem;
+      z-index: 5; }
+      .team__card__logo-idea {
+        background: #E3B873 url("../img/idea.svg") no-repeat center; }
+      .team__card__logo-pen {
+        background: #E3B873 url("../img/pen.svg") no-repeat center; }
+      .team__card__logo-portfolio {
+        background: #E3B873 url("../img/portfolio.svg") no-repeat center; }
+    .team__card__text {
+      padding-top: 1.57rem;
+      background-color: #ffffff;
+      width: 16.642rem;
+      text-align: center; }
+    .team__card--item {
+      color: #959595;
+      font-size: 1.285rem; }
+    .team__card--expirience {
+      background-color: #E3B873;
+      padding: 1rem 0;
+      font-family: 'Yeseva One', cursive;
+      text-transform: uppercase;
+      color: #ffffff; }
 
 .footer {
   background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;

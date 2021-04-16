@@ -148,6 +148,21 @@ $(document).ready(function () {
           required: "Email обязателен",
           email: "Введите в формате: name@domain.com"
         }
+      },
+      submitHandler: function(form) {
+        $.ajax({
+          type: "POST",
+          url: "send.php",
+          data: $(form).serialize(),
+          success: function (response) {
+            console.log('Ajax сработал' + response);
+            $(form)[0].reset();
+            modal.removeClass('modal--visible');
+          },
+          error: function (response) {
+            console.error('Ошибка ', + response);
+          }
+        });
       }
     });
     $('.control__form').validate({
