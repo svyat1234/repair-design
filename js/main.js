@@ -80,6 +80,12 @@ $(document).ready(function () {
     next.css('left', prev.width() + 10 + bullets.width() +10);
     bullets.css('left', prev.width() + 10);
 
+    var workNext = $('.work-swiper-button-next');
+    var workPrev = $('.work-swiper-button-prev');
+    var workBullets = $('.work-swiper-pagination');
+    workNext.css('left', workPrev.width() + 10 + workBullets.width() +10);
+    workBullets.css('left', workPrev.width() + 10);
+
 
     // Прокрутка наверх
     $(function() {
