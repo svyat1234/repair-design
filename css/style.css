@@ -736,7 +736,7 @@ img {
   margin-bottom: 4.428rem;
   max-width: 58.35rem;
   min-height: 31rem;
-  background: #131313 url("../img/video-mask.jpg") no-repeat center;
+  background: #131313 url("../img/video-mask.jpg") no-repeat center/cover;
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15); }
   .control__video::before {
     content: '';
@@ -753,7 +753,11 @@ img {
   margin: auto; }
 
 .control__input {
-  color: rgba(19, 19, 19, 0.7);
+  outline: none;
+  color: #181818; }
+
+.control__input::placeholder {
+  color: #181818;
   outline: none; }
 
 .control__input-group {
@@ -762,6 +766,7 @@ img {
   flex-basis: 30%; }
 
 .control__label {
+  color: rgba(19, 19, 19, 0.7);
   margin-bottom: -7px; }
 
 .control__button {
@@ -929,6 +934,8 @@ img {
     .team__card__logo-portfolio {
       background: #E3B873 url("../img/portfolio.svg") no-repeat center; }
   .team__card__text {
+    margin-top: -60px;
+    z-index: 5;
     padding-top: 1.57rem;
     background-color: #ffffff;
     width: 16.642rem;
@@ -1139,28 +1146,114 @@ img {
   html {
     font-size: 12px; }
   .nav__item {
-    margin-right: 1rem; } }
+    margin-right: 1rem; }
+  .scrollup {
+    display: none;
+    visibility: hidden; } }
 
 @media screen and (max-width: 992px) {
+  .card {
+    margin-bottom: 5rem; }
+  .row {
+    flex-direction: column;
+    align-items: center; }
   .nav {
     display: none; }
   .hero__instagram {
     display: none; }
   .hero__content {
-    margin-left: 0; } }
+    margin-left: 0; }
+  .projects {
+    background: #131313; }
+    .projects-col {
+      width: 100%; }
+    .projects__slide {
+      width: 100%;
+      margin-top: 33px;
+      margin-top: 33px; }
+  .swiper-slide__titles {
+    display: none; }
+  .work__slide--left {
+    width: 100%; }
+  .work__swiper-slide {
+    margin-top: 5rem;
+    width: 100%; }
+  .team__card {
+    margin-bottom: 6.9rem;
+    box-shadow: 10px 10px 20px rgba(24, 24, 24, 0.05); } }
 
 @media screen and (max-width: 760px) {
-  .row {
-    flex-direction: column;
-    align-items: center; }
-  .types__card {
-    margin-bottom: 5rem; }
+  body {
+    background-color: #131313;
+    color: #ffffff; }
+  .projects__slide {
+    width: 100%;
+    margin-top: 33px; }
+  .control {
+    color: #ffffff;
+    padding-bottom: 5.3rem; }
+    .control__input {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+    .control__input::placeholder {
+      color: #ffffff; }
+  .types {
+    background-color: #ffffff; }
+    .types__section-title {
+      color: #181818; }
+    .types__card {
+      margin-bottom: 5rem; }
   .card__text {
     margin-left: 0; }
   .design__card {
-    margin-bottom: 5rem; } }
+    margin-bottom: 5rem; }
+  .card__title {
+    color: #181818; }
+  .work {
+    display: none; }
+  .team {
+    margin-top: 30rem; }
+  .clients {
+    display: none; }
+  .team__card {
+    margin-bottom: 6.9rem;
+    box-shadow: 0 0; }
+  .footer__wrap {
+    margin-top: 0; } }
+
+@media screen and (max-width: 630px) {
+  .control__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start; }
+  .control__input-group-name {
+    margin-bottom: 64px; }
+  .control__label {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2px; }
+  .control__button {
+    margin: auto;
+    margin-top: 2rem; } }
 
 @media screen and (max-width: 570px) {
+  .control {
+    position: relative; }
+    .control__button {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 0;
+      margin-bottom: -20px;
+      min-width: 80%;
+      order: 1; }
+    .control__policy {
+      margin-top: 28px;
+      display: flex; }
+    .control__video {
+      max-width: 100%;
+      min-height: 207px; }
+  .video__play {
+    width: 67px; }
   .contacts__phone {
     margin-right: 0;
     color: #ffffff;
