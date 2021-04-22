@@ -94,7 +94,7 @@ $(document).ready(function () {
         // переместиться в верхнюю часть страницы
         $("html, body").animate({
           scrollTop:0
-        },700);
+        },1100);
       })
     })
     // при прокрутке окна (window)

@@ -139,11 +139,40 @@
       display: block
       min-width: 22.86rem
       margin-bottom: 1.85rem
+  .team-text
+    display: none
+  .footer
+    display: flex
+    order: 2
+    flex-direction: column
+    background: none
+    &__wrap
+      background: none
+    &__map
+      min-height: 255px
+      max-height: 255px
+    &__section-title
+    &__menu
+      display: none
+@media screen and ( max-width: 449px )
+  .footer
+    &__title
+      margin: 0
+    &__input
+      min-width: 100%
+      border-bottom: 1px solid $light
+      &-group
+        margin: 0
+        margin-top: 60px
+        flex-basis: 100%
+        width: 100%
+    &__policy
+    &__button
+      margin-top: 37px
+      max-width: 100%
+      width: 100%
+      
 @media screen and ( max-height: 520px )
   .hero
     &__scroll-down
       display: none
-  
-
-
-  
