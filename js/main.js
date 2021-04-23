@@ -118,12 +118,10 @@ $(document).ready(function () {
         behavior: 'smooth'
         })
       }
-      var button = document.querySelector('.hero__scroll-down');
-      var footer = document.querySelector('#footer');
-      
-      button.addEventListener('click', () => {
-        scrollTo(footer);
-      })
+      $('.hero__scroll-down').on('click', function(e){
+        $('html,body').stop().animate({ scrollTop: $('.footer__menu').offset().top }, 1000);
+        e.preventDefault();
+      });
 
     // Анимация
     new WOW().init();
@@ -198,6 +196,7 @@ $(document).ready(function () {
           required: true,
           minlength: 2
         },
+
         userQuastion: "required",
         userPhone: "required",
         // compound rule
@@ -219,6 +218,7 @@ $(document).ready(function () {
         }
       }
     });
+
 
     // Маска для номера телефона
     $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
@@ -258,4 +258,22 @@ $(document).ready(function () {
       myMap.geoObjects
           .add(myPlacemark);
   });
+
+    $('#onProjects').on('click', function(e){
+      $('html,body').stop().animate({ scrollTop: $('#toProjects').offset().top }, 1000);
+      e.preventDefault();
+    });
+    $('#onTeam').on('click', function(e){
+      $('html,body').stop().animate({ scrollTop: $('#toTeam').offset().top -450}, 1000);
+      e.preventDefault();
+    });
+    $('#onClients').on('click', function(e){
+      $('html,body').stop().animate({ scrollTop: $('#toClients').offset().top }, 1000);
+      e.preventDefault();
+    });
+    $('#onContacts').on('click', function(e){
+      $('html,body').stop().animate({ scrollTop: $('#toContacts').offset().top }, 1000);
+      e.preventDefault();
+    });
+    
 });

@@ -20,11 +20,11 @@
                 <div class="logo menu__logo animate__animated animate__fadeIn">Repair Design Project</div>
                 <nav class="nav menu__nav">
                     <a href="#" class="nav__item">Главная</a>
-                    <a href="#" class="nav__item">Проекты</a>
+                    <a href="#" class="nav__item" id="onProjects">Проекты</a>
                     <a href="#" class="nav__item">Замер</a>
-                    <a href="#" class="nav__item">Команда</a>
-                    <a href="#" class="nav__item">Отзывы</a>
-                    <a href="#" class="nav__item">Контакты</a>
+                    <a href="#" class="nav__item" id="onTeam">Команда</a>
+                    <a href="#" class="nav__item" id="onClients">Отзывы</a>
+                    <a href="#" class="nav__item" id="onContacts">Контакты</a>
                 </nav>
                 <div class="contacts menu__contacts">
                     <a href="tel:+79997683299" class="phone contacts__phone">+79997683299</a>
@@ -56,7 +56,7 @@
             <a href="#" class="hero__scroll-down">листайте вниз</a>
         </section>
         <!-- /.hero -->
-        <section class="section section--dark projects">
+        <section class="section section--dark projects" id="toProjects">
             <div class="container">
                 <div class="row">
                     <div class="col-50 projects-col">
@@ -166,7 +166,7 @@
             <!-- /.container -->
         </section>
         <!-- /.section section--dark projects -->
-        <section class="srction control">
+        <section class="srction control" id="kok">
             <div class="container">
                 <div class="section-title control__section-title section-title--light">
                     <h2 class="section-title__heading wow animate__animated animate__fadeInDown">Онлайн контроль</h2>
@@ -581,7 +581,7 @@
             <!-- /.container -->
         </section>
         <!-- /.section section--dark projects -->
-        <section class="section team">
+        <section class="section team" id="toTeam">
             <div class="container">
                 <div class="section-title team__section-title section-title--light">
                     <h2 class="section-title__heading wow animate__animated animate__fadeInDown">Онлайн контроль</h2>
@@ -636,7 +636,7 @@
             <!-- /.container -->
         </section>
         <!-- /.section team -->
-        <section class="clients">
+        <section class="clients" id="toClients">
             <div class="container">
                 <div class="section-title clients__section-title">
                     <h2 class="section-title__heading wow fadeInUp" data-wow-delay="1s">Наши клиенты</h2>
@@ -761,7 +761,7 @@
                 </form>
                 <!-- /.footer__form -->
             </div>
-            <div class="section-title footer__section-title">
+            <div class="section-title footer__section-title" id="toContacts">
                 <h2 class="section-title__heading wow fadeInUp" data-wow-delay="1s">
                     Ростов на дону, Торговый центр Plaza Прямой&nbsp;телефон 
                     <a href="tel:+79997683299" class="footer__link__phone">+7 (999) 768 32 99</a>
@@ -802,7 +802,7 @@
     </footer>
     <!-- /.footer section section--dark -->
         <a class="scrollup">
-            Листайте наверх
+            <span class="scrollup-text">Листайте наверх</span>
         </a>
         <div class="modal">
             <div class="modal__dialog">
@@ -822,7 +822,7 @@
                         <input type="email" name="userEmail" class="input form__input modal__input input--light" id="user-email" placeholder="Ваш email:">
                     </div>
                     <div class="policy modal__policy">
-                        <input type="checkbox" name="policy-chekbox" id="policy-chekbox" class="policy__checkbox" checked>
+                        <input type="checkbox" name="policyChekbox" id="policy-chekbox" class="policy__checkbox" checked>
                         <label for="policy-chekbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
                     </div>
                     <!-- /.policy -->

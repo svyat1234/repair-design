@@ -1131,6 +1131,18 @@ img {
   .modal__button {
     align-self: flex-end; }
 
+@media screen and (max-width: 1600px) {
+  .scrollup {
+    background: none;
+    flex-direction: column;
+    min-width: 5rem; }
+    .scrollup-text {
+      order: 2;
+      display: none; }
+    .scrollup::after {
+      order: 1;
+      display: flex; } }
+
 @media screen and (max-width: 1200px) {
   html {
     font-size: 12px; }
