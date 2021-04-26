@@ -213,5 +213,21 @@ $(document).ready(function () {
       $('html,body').stop().animate({ scrollTop: $('#toContacts').offset().top }, 1000);
       e.preventDefault();
     });
+
+    var player;
+    $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '465',
+        width: '100%',
+        videoId: 'Dw_i6WcmdFY',
+        events: {
+          'onReady': videoPlay,
+        }
+      });
+    })
+  
+    function videoPlay(event) {
+      event.target.playVideo();
+    }
     
 });

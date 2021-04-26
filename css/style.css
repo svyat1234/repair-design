@@ -770,7 +770,8 @@ img {
 
 .video__play {
   position: relative;
-  margin: auto; }
+  margin: auto;
+  cursor: pointer; }
 
 .projects {
   padding-bottom: 30rem;
@@ -1099,6 +1100,7 @@ img {
   .modal__dialog {
     position: relative;
     max-width: 36.36rem;
+    min-height: 37.36rem;
     background: #131313 url("../img/bg-lines.svg");
     padding: 2.357rem 3.5rem 1.928rem;
     color: #ffffff; }
@@ -1125,12 +1127,26 @@ img {
   .modal__input-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3.428rem; }
+    margin-bottom: 3.428rem;
+    max-width: 100%;
+    width: 80%; }
+  .modal__input-group:nth-child(1) {
+    position: absolute; }
+  .modal__input-group:nth-child(2) {
+    position: absolute;
+    margin-top: 6.43rem; }
+  .modal__input-group:nth-child(3) {
+    position: absolute;
+    margin-top: 13rem; }
   .modal__input:last-of-type {
     margin-bottom: 1rem; }
   .modal__policy {
+    position: absolute;
+    bottom: 70px;
     margin-bottom: 2.7rem; }
   .modal__button {
+    position: absolute;
+    bottom: 50px;
     align-self: flex-end; }
 
 @media screen and (max-width: 1600px) {
@@ -1287,7 +1303,8 @@ img {
       background: none; }
     .footer__map {
       min-height: 255px;
-      max-height: 255px; }
+      max-height: 255px;
+      overflow: hidden; }
     .footer__menu {
       display: none; } }
 

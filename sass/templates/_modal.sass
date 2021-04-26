@@ -19,6 +19,7 @@
     &__dialog
         position: relative
         max-width: 36.36rem
+        min-height: 37.36rem
         background: $dark url('../img/bg-lines.svg')
         padding: 2.357rem 3.5rem 1.928rem
         color: $light
@@ -47,9 +48,23 @@
             display: flex
             flex-direction: column
             margin-bottom: 3.428rem
+            max-width: 100%
+            width: 80%
+        &-group:nth-child(1)
+            position: absolute
+        &-group:nth-child(2)
+            position: absolute
+            margin-top: 6.43rem
+        &-group:nth-child(3)
+            position: absolute
+            margin-top: 13rem
         &:last-of-type
             margin-bottom: 1rem
     &__policy
+        position: absolute
+        bottom: 70px
         margin-bottom: 2.7rem
     &__button
+        position: absolute
+        bottom: 50px
         align-self: flex-end
