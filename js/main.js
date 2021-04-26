@@ -1,30 +1,3 @@
-/*document.addEventListener("DOMContentLoaded", function(event) { 
-    const modal = document.querySelector('.modal');
-    const modalBtn = document.querySelectorAll('[data-toggle=modal]');
-    const closeBtn = document.querySelector('.modal__close');
-    const switchModal = () => {
-        modal.classList.toggle('modal--visible');
-    } 
-    modalBtn.forEach(element => {
-        element.addEventListener('click', switchModal);
-    });
-
-    closeBtn.addEventListener('click', switchModal);
-    window.onclick =function(event) {
-        if (event.target == modal) {
-            modal.classList.toggle('modal--visible');
-        }
-    }
-    // Нерабочая клавиша Esc
-     document.addEventListener ('keypress', function (e) {
-        if (e.code == 'Backquote') {
-            modal.classList.toggle('modal--visible');
-        }
-      }); 
-}); */
-
-
-
 $(document).ready(function () {
     // Настройка модального окна
     var modal = $('.modal'), 
@@ -155,20 +128,18 @@ $(document).ready(function () {
       },
       submitHandler: function(form) {
         $.ajax({
-          type: "POST",
-          url: "send.php",
-          data: $(form).serialize(),
-          success: function (response) {
-            console.log('Ajax сработал' + response);
-            $(form)[0].reset();
-            modal.removeClass('modal--visible');
-          },
-          error: function (response) {
-            console.error('Ошибка ', + response);
-          }
+            type: "POST",
+            url: "send.php",
+            data: $(form).serialize(),
+            success: function (response) {
+                console.log('Ajax сработал. Ответ сервера:' + response);
+                $(form)[0].reset();
+                modal.removeClass('modal--visible');
+                alert('Форма отправлена, мы свяжемся с вами в течении 15 минут.')
+            }
         });
-      }
-    });
+    }
+});
     $('.control__form').validate({
       errorClass: "invalid",
       rules: {
@@ -224,40 +195,7 @@ $(document).ready(function () {
     $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
 
 
-    // создание yandex карты
-    ymaps.ready(function () {
-      var myMap = new ymaps.Map('map', {
-              center: [47.244621, 39.723167],
-              zoom: 18
-          }, {
-              searchControlProvider: 'yandex#search'
-          }),
-  
-          // Создаём макет содержимого.
-          MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-              '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-          ),
-  
-          myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-              hintContent: 'Наш магазин',
-              balloonContent: 'Улыбнись :)'
-          }, {
-              // Опции.
-              // Необходимо указать данный тип макета.
-              iconLayout: 'default#image',
-              // Своё изображение иконки метки.
-              iconImageHref: 'img/location.png',
-              // Размеры метки.
-              iconImageSize: [32, 32],
-              // Смещение левого верхнего угла иконки относительно
-              // её "ножки" (точки привязки).
-              iconImageOffset: [-5, -38]
-          });
-  
-  
-      myMap.geoObjects
-          .add(myPlacemark);
-  });
+   
 
     $('#onProjects').on('click', function(e){
       $('html,body').stop().animate({ scrollTop: $('#toProjects').offset().top }, 1000);
